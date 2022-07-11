@@ -21,6 +21,8 @@ public interface IEducacionService {
     //Buscar una Educacion por ID
     public Educacion findEducacion(Long id);
 
-    public String findEducacionid(Long id);
+   
+
+ 
 }
 

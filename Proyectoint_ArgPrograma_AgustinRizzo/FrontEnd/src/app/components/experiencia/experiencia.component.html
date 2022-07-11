@@ -2,22 +2,16 @@
     <h1>Experiencia laboral</h1>
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
-        <ul>
-            <li><h1>Trabajo 1</h1> - 
-                <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum impedit sunt nesciunt veniam laborum? Quod fuga nemo unde voluptatem at? Cumque ut sapiente facere qui sit explicabo molestiae, voluptas harum.</p>
+        <ul *ngFor="let item2 of experiencia">
+            <li><h1>{{item2.empresa}}</h1> - 
+                <h3>{{item2.duracion}}</h3></li>
+            <p>{{item2.tarea}}</p>
         </ul>
-        <ul>
-            <li><h1>Trabajo 2</h1> - 
-                <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum impedit sunt nesciunt veniam laborum? Quod fuga nemo unde voluptatem at? Cumque ut sapiente facere qui sit explicabo molestiae, voluptas harum.</p>
-        </ul>
-        <ul>
-            <li><h1>Trabajo 3</h1> - 
-                <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum impedit sunt nesciunt veniam laborum? Quod fuga nemo unde voluptatem at? Cumque ut sapiente facere qui sit explicabo molestiae, voluptas harum.</p>
-        </ul>
-        
+       
 
     </div>
 </div>
+
+
+
+     

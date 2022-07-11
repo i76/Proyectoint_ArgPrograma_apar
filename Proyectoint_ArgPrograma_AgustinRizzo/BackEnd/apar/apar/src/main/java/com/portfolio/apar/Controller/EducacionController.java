@@ -51,9 +51,9 @@ public class EducacionController {
     return educacion;
    }
     
-    @GetMapping("/educacion/traer/{id}")
+    @GetMapping("/educacion/traer/perfil")
     public Educacion findEducacion(@PathVariable Long id){
-        return ieducacionService.findEducacion(id);
+        return ieducacionService.findEducacion((long)1);
     }
 }
 

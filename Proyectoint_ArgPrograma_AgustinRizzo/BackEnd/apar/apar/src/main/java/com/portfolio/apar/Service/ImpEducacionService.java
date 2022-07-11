@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+
 @Service
 public class ImpEducacionService implements IEducacionService{
     @Autowired IEducacionRepository ieducacionRepository;
@@ -34,11 +36,11 @@ public class ImpEducacionService implements IEducacionService{
         Educacion educacion = ieducacionRepository.findById(id).orElse(null);
         return educacion;
     }
+   
 
-    @Override
-    public String findEducacionid(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
+
+  
 
     
 
