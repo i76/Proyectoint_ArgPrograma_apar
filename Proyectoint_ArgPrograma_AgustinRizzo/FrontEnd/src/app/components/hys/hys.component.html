@@ -1,13 +1,13 @@
 
     <div class="row">
-      <h1>Hard & Soft Skilss</h1>
+      <h1 class="title" style="color:blue"> Hard & Soft Skilss</h1>
         <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let HardsoftSkill of hardsoftskill">
             <h3 class="progress-title">{{ this.HardsoftSkill.nombre }}</h3>
             <div class="progress-outer">
                 <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-danger" style="width:50%;"></div>
+                    <div class="progress-bar {{this.HardsoftSkill.colorbar}} progress-bar-striped progress-bar-danger" style="width:50%;"></div>
                     <div class="progress-value"><span>{{this.HardsoftSkill.valor}}</span>%</div>
-                    <img src='".$row["this.HardsoftSkill.imgHS"]."' >
+                   <img src="{{this.HardsoftSkill.imgHS}}" alt="">
                 </div>
             </div>
         </div>

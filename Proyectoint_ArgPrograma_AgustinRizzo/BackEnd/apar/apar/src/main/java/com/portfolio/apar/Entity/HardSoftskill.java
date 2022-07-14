@@ -24,6 +24,13 @@ public class HardSoftskill {
     @Size(min = 1, max = 200, message = "no cumple con la longitud")
     private String valor;
     
+    @NotNull
+    @Size(min = 1, max = 200, message = "no cumple con la longitud")
+    private String imgHS;
+    
+    @NotNull
+    @Size(min = 1, max = 200, message = "no cumple con la longitud")
+    private String colorbar;
    
     
     
