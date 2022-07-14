@@ -1,105 +1,16 @@
-<div class="row">
-    <h1>Hard & Soft Skilss</h1>
-  <div class="text-center col-sm-4 col-md-4 col-lg-4">
-     <circle-progress
-       [percent]="85"
-       [radius]="100"
-       [showUnits]="false"
-       [imageSrc]="'../assets/html.png'"
-       [showImage]="true"
-       [imageWidth]="100"
-       [imageHeight]="100"
-       [outerStrokeWidth]="16"
-       [innerStrokeWidth]="8"
-       [outerStrokeColor]="'#78C000'"
-       [innerStrokeColor]="'#C7E596'"
-       [animation]="true"
-       [animationDuration]="300"
-      ></circle-progress>
+
+    <div class="row">
+      <h1>Hard & Soft Skilss</h1>
+        <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let HardsoftSkill of hardsoftskill">
+            <h3 class="progress-title">{{ this.HardsoftSkill.nombre }}</h3>
+            <div class="progress-outer">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-danger" style="width:50%;"></div>
+                    <div class="progress-value"><span>{{this.HardsoftSkill.valor}}</span>%</div>
+                    <img src='".$row["this.HardsoftSkill.imgHS"]."' >
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="65"
-          [radius]="100"
-          [showUnits]="false"
-          [imageSrc]="'../assets/CSS-Logo.png'"
-          [showImage]="true"
-          [imageWidth]="180"
-          [imageHeight]="100"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#78C000'"
-          [innerStrokeColor]="'#C7E596'"
-          [animation]="true"
-          [animationDuration]="300"
-         ></circle-progress>
-       </div>
-       <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="75"
-          [radius]="100"
-          [showUnits]="false"
-          [imageSrc]="'../assets/JavaScript-logo.png'"
-          [showImage]="true"
-          [imageWidth]="180"
-          [imageHeight]="100"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#78C000'"
-          [innerStrokeColor]="'#C7E596'"
-          [animation]="true"
-          [animationDuration]="300"
-         ></circle-progress>
-       </div>
-       <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="55"
-          [radius]="100"
-          [showUnits]="false"
-          [imageSrc]="'../assets/GitHub-Logo.png'"
-          [showImage]="true"
-          [imageWidth]="180"
-          [imageHeight]="100"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#78C000'"
-          [innerStrokeColor]="'#C7E596'"
-          [animation]="true"
-          [animationDuration]="300"
-         ></circle-progress>
-       </div>
-       <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="85"
-          [radius]="100"
-          [showUnits]="false"
-          [imageSrc]="'../assets/grupo.png'"
-          [showImage]="true"
-          [imageWidth]="100"
-          [imageHeight]="100"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#78C000'"
-          [innerStrokeColor]="'#C7E596'"
-          [animation]="true"
-          [animationDuration]="300"
-         ></circle-progress>
-       </div>
-       <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-          [percent]="60"
-          [radius]="100"
-          [showUnits]="false"
-          [imageSrc]="'../assets/ingles.png'"
-          [showImage]="true"
-          [imageWidth]="100"
-          [imageHeight]="100"
-          [outerStrokeWidth]="16"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#78C000'"
-          [innerStrokeColor]="'#C7E596'"
-          [animation]="true"
-          [animationDuration]="300"
-         ></circle-progress>
-       </div>
-</div>
+
+

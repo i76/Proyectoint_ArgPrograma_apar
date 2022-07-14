@@ -1,14 +1,18 @@
-export class HardSoftskill{
-    id?:String;
+export class HardSoftskill {
+    id?:number;
     nombre:String;
-    valor:String;
+    valor:number;
+    imgHS:string;
    
 
-    constructor(id:String, nombre:String, valor:String){
-        this.id = id;
-        this.nombre = nombre;
-        this.valor = valor;
-        
-        
+    constructor(nombre: String, valor: number, imgHS: string){
+            this.nombre = nombre;
+            this.valor = valor;
+            this.imgHS = imgHS;
     }
-}
+    
+    }
+   
+
+  
+    

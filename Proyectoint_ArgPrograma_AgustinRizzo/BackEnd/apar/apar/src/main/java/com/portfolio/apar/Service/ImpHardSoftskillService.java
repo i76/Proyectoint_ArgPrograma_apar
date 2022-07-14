@@ -29,8 +29,7 @@ public class ImpHardSoftskillService implements IHardSoftskillService {
 
     @Override
     public HardSoftskill findHardSoftskill(Long id) {
-        HardSoftskill hardsoftskill = ihardsoftskillRepository.findById(id).orElse(null);
-        return hardsoftskill;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+   
 }
