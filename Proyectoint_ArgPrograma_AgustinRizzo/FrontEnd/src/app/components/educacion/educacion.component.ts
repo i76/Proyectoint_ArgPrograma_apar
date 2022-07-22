@@ -9,6 +9,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
 })
 export class EducacionComponent implements OnInit {
   educacion: educacion[] = [];
+ 
 
   id:String="";
   estudio:String="";

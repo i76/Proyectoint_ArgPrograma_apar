@@ -10,7 +10,8 @@
             <a href="https://twitter.com/guti_545"><img src="../../../assets/kisspng-wing-font-twitter-2.png" id="twitter"></a>
             <a href="https://www.linkedin.com/in/agust%C3%ADn-noel-rizzo-b3a9a083/"><img src="../../../assets/png-clipart-linkedin-linkedin.png" id="linkedin"></a>
             <a href="https://www.instagram.com/monkey_tech1/?hl=es-la"><img src="../../../assets/transparent-logo-icon-instagram.png" id="instagram"></a>
-                <button type="button" class="btn btn-outline-light" (click)="login()">INGRESAR</button>
+                <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">INGRESAR</button>
+                <button type="button" class="btn btn-outline-light" (click)="onLogOut()"*ngIf="isLogged">CERRAR SESION</button>
      </div>
 
 

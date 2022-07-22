@@ -4,6 +4,7 @@ import com.portfolio.apar.Entity.Persona;
 import com.portfolio.apar.Interface.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,12 +24,16 @@ import org.springframework.web.bind.annotation.RestController;
     public List<Persona> getPersona(){
         return ipersonaService.getPersona();
     } 
+    
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/personas/crear")
     public String createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
         return "La Persona fue creada correctamente";
     } 
-    
+   
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/borrar/(id)")
     public String deletePersona(@PathVariable Long id){
         ipersonaService.deletePersona(id);
@@ -37,6 +42,8 @@ import org.springframework.web.bind.annotation.RestController;
     
     
     //URL:PUERTO/personas/editar/4/nombre & apellido & img
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/personas/editar/(id)")
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam("nombre") String nuevoNombre,

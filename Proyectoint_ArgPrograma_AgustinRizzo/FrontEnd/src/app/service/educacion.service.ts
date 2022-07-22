@@ -11,6 +11,9 @@ import { educacion } from '../model/educacion.model';
 
 
 export class EducacionService {
+  addEducacion(value: any) {
+    throw new Error('Method not implemented.');
+  }
   URL = 'http://localhost:8080/educacion/';
 
   constructor(private http: HttpClient) { }
