@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { experiencia } from 'src/app/model/experiencia.model';
+import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { TokenService } from 'src/app/service/token.service';
+
+
 
 @Component({
   selector: 'app-experiencia',
@@ -8,24 +11,45 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-  experiencia: any;
-
-  id: String='';
-  empresa: String='';
-  tarea: String='';
-  duracion: String='';
-
+  expe: Experiencia[] = [];
 
   
+  constructor(private sExperiencia: ExperienciaService, private tokenService: TokenService) { }
 
-  constructor(public experienciaService: ExperienciaService) { }
+  isLogged = false; 
 
   ngOnInit(): void {
-    this.experienciaService.getExperiencia().subscribe(dataExperiencia =>{console.log(dataExperiencia); this.experiencia = dataExperiencia})
+    this.cargarExperiencia();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;      
+    } else {
+      this.isLogged =  false;
+    }
     
   }
 
+  cargarExperiencia(): void {
+    this.sExperiencia.lista().subscribe(data => { this.expe = data; })
+  }
+
+
+
+  delete(id?: number){
+  if(id != undefined){
+    this.sExperiencia.delete(id).subscribe(
+      data => {
+        this.cargarExperiencia();
+      }, err =>{
+        alert("No se pudo borrar la experiencia");
+      }
+    )
+
+  }
+  }
 }
+
+
+
 
  
 

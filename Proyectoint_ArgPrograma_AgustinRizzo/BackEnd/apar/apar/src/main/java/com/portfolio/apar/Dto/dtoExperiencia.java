@@ -2,45 +2,32 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.portfolio.apar.Entity;
+package com.portfolio.apar.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
 
 /**
  *
  * @author Agus16
  */
+import javax.validation.constraints.NotBlank;
 
-@Entity
-public class Experiencia {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class dtoExperiencia {
+    @NotBlank
     private String nombreE;
+    @NotBlank
     private String descripcionE;
     
     //Constructores
 
-    public Experiencia() {
+    public dtoExperiencia() {
     }
 
-    public Experiencia(String nombreE, String descripcionE) {
+    public dtoExperiencia(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
-    
-    //Getters and setters
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    //Getters & Setters
 
     public String getNombreE() {
         return nombreE;
@@ -59,5 +46,3 @@ public class Experiencia {
     }
     
 }
- 
-
