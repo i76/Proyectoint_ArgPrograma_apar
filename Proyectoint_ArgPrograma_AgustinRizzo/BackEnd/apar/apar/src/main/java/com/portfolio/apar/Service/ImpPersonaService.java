@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.portfolio.apar.Service;
 
 import com.portfolio.apar.Entity.Persona;
@@ -7,19 +11,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ *
+ * @author Agus16
+ */
 @Service
-public class ImpPersonaService implements IPersonaService{
-@Autowired IPersonaRepository ipersonaRepository;
+public class ImpPersonaService implements IPersonaService {
+    @Autowired IPersonaRepository ipersonaRepository;
     
     @Override
     public List<Persona> getPersona() {
         List<Persona> persona = ipersonaRepository.findAll();
-        return persona;  
+        return persona;
     }
 
     @Override
     public void savePersona(Persona persona) {
-          ipersonaRepository.save(persona);
+        ipersonaRepository.save(persona);
     }
 
     @Override
@@ -34,3 +42,5 @@ public class ImpPersonaService implements IPersonaService{
     }
     
 }
+
+

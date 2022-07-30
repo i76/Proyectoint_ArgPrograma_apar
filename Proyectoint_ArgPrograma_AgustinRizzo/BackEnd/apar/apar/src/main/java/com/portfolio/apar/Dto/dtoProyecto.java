@@ -2,40 +2,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.portfolio.apar.Entity;
+package com.portfolio.apar.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 /**
  *
  * @author Agus16
  */
-@Entity
-public class Proyecto {
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY) 
-  private int id;
+public class dtoProyecto {
+  @NotBlank  
   private String nombreproy;
+  @NotBlank
   private String urlproy;
+  
+  //Constructores
 
-    public Proyecto() {
+    public dtoProyecto() {
     }
 
-    public Proyecto(String nombreproy, String urlproy) {
+    public dtoProyecto(String nombreproy, String urlproy) {
         this.nombreproy = nombreproy;
         this.urlproy = urlproy;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+  
+    //Getters & Setters
 
     public String getNombreproy() {
         return nombreproy;
@@ -52,8 +43,9 @@ public class Proyecto {
     public void setUrlproy(String urlproy) {
         this.urlproy = urlproy;
     }
- 
-  
-  
+    
+    
   
 }
+
+

@@ -1,7 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
 package com.portfolio.apar.Interface;
 
 import com.portfolio.apar.Entity.Acercade;
 import java.util.List;
+
+
 
 
 public interface IAcercadeService {
@@ -20,7 +26,3 @@ public interface IAcercadeService {
     //Buscar un Acercade por ID
     public Acercade findAcercade(Long id);
 }
-
-
-    
-
