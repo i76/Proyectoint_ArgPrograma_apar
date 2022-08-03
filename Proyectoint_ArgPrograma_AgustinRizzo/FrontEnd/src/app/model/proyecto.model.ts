@@ -1,12 +1,10 @@
 export class proyecto{
     id?:number;
-    nombreproy:String;
-    descripcion:String;
-    urlproy:String;
+    nombreproy:string;
+    urlproy:string;
 
-    constructor(nombreproy:String, descripcion:String, urlproy:String){
+    constructor(nombreproy:string, urlproy:string){
         this.nombreproy = nombreproy;
-        this.descripcion = descripcion;
         this.urlproy = urlproy;
     }
 }

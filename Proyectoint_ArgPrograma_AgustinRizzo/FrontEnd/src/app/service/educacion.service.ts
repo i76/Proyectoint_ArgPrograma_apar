@@ -1,8 +1,8 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { educacion } from '../model/educacion.model';
+
 
 
 @Injectable({
@@ -11,16 +11,30 @@ import { educacion } from '../model/educacion.model';
 
 
 export class EducacionService {
-  addEducacion(value: any) {
-    throw new Error('Method not implemented.');
+  
+  URL = 'https://aparback.herokuapp.com/educacion/';
+
+  constructor(private httpClient : HttpClient) { }
+
+  public lista(): Observable<educacion[]>{
+    return this.httpClient.get<educacion[]>(this.URL+'lista');
+
   }
-  URL = 'http://localhost:8080/educacion/';
 
-  constructor(private http: HttpClient) { }
+  public detail(id: number): Observable<educacion>{
+    return this.httpClient.get<educacion>(this.URL + `detail/${id}`);
+  }
 
-  public getEducacion(): Observable<educacion[]>{
-    return this.http.get<educacion[]>(this.URL+'traer');
+  public save(educacion: educacion): Observable<any>{
+    return this.httpClient.post<any>(this.URL + 'create', educacion);
+  }
 
+  public update(id: number, educacion: educacion): Observable<any>{
+    return this.httpClient.put<any>(this.URL + `update/${id}`, educacion);
+  }
+
+  public delete(id: number): Observable<any>{
+    return this.httpClient.delete<any>(this.URL + `delete/${id}`);
   }
 }
 

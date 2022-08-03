@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/proyectoint-arg-programa-agustin-rizzo",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

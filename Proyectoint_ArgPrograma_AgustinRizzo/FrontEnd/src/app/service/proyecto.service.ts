@@ -12,12 +12,29 @@ import { proyecto } from '../model/proyecto.model';
 
 
 export class ProyectoService {
-  URL = 'http://localhost:8080/proyecto/';
+  URL = 'https://aparback.herokuapp.com/proyecto/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient : HttpClient) { }
 
-  public getProyecto(): Observable<proyecto[]>{
-    return this.http.get<proyecto[]>(this.URL+'traer');
+  public lista(): Observable<proyecto[]>{
+    return this.httpClient.get<proyecto[]>(this.URL+'lista');
 
   }
+
+  public detail(id: number): Observable<proyecto>{
+    return this.httpClient.get<proyecto>(this.URL + `detail/${id}`);
+  }
+
+  public save(proyecto: proyecto): Observable<any>{
+    return this.httpClient.post<any>(this.URL + 'create', proyecto);
+  }
+
+  public update(id: number,proyecto: proyecto): Observable<any>{
+    return this.httpClient.put<any>(this.URL + `update/${id}`, proyecto);
+  }
+
+  public delete(id: number): Observable<any>{
+    return this.httpClient.delete<any>(this.URL + `delete/${id}`);
+  }
 }
+

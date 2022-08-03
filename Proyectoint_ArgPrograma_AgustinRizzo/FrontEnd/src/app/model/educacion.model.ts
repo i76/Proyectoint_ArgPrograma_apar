@@ -1,11 +1,11 @@
 export class educacion{
-    id:String="";
-    estudio:String="";
-    years:String="";
+    id?:number;
+    nombreE:string;
+    descripcionE:string;
 
-    constructor(id:String, estudio:String, years:String){
-        this.id = id;
-        this.estudio = estudio;
-        this.years = years;
+    constructor(nombreE:string, descripcionE:string){
+       
+        this.nombreE = nombreE;
+        this.descripcionE = descripcionE;
     }
 }

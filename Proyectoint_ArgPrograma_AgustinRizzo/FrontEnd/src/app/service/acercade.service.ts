@@ -9,7 +9,7 @@ import { acercade} from '../model/acercade.model';
   providedIn: 'root'
 })
 export class AcercadeService {
-    URL = 'http://localhost:8080/acercade/';
+    URL = 'https://aparback.herokuapp.com/acercade/';
 
   
     constructor(private http: HttpClient ) { }
